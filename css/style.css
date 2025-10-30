@@ -200,6 +200,8 @@ body {
 .link-icon {
     width: 40px;
     height: 40px;
+    min-width: 40px; /* Fuerza el tamaño mínimo */
+    min-height: 40px; /* Fuerza el tamaño mínimo */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -262,4 +264,5 @@ body {
     .profile h2 {
         font-size: 16px;
     }
+
 }
