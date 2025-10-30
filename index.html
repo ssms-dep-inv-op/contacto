@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departamento de Inversiones y Operaciones</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+     <div class="container">
+        <div class="profile">
+            <img src="img/img1.png" class="profile-img">
+            <h1>DEPARTAMENTO DE INVERSIONES Y OPERACIONES</h1>
+            <p>Servicio de Salud Metropolitano Sur</p>
+            <div class="divider"></div>
+            <p><strong>Conoce nuestro equipo de Estudios Preinversiones</strong></p>
+        </div>
+
+        <div class="team-section">
+            
+
+            <div class="team-grid">
+                <a href="claudiogrinspun.html" class="team-member">
+                    <div class="member-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Claudio Grinspun</h3>
+                        <p>Jefe de Departamento</p>
+                    </div>
+                    <i class="fas fa-chevron-right member-arrow"></i>
+                </a>
+
+                <a href="taniacalderon.html" class="team-member">
+                    <div class="member-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Tania Calderón</h3>
+                        <p>Coordinadora</p>
+                    </div>
+                    <i class="fas fa-chevron-right member-arrow"></i>
+                </a>
+
+                <a href="martinrodriguez.html" class="team-member">
+                    <div class="member-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Martín Rodríguez</h3>
+                        <p>Formulador</p>
+                    </div>
+                    <i class="fas fa-chevron-right member-arrow"></i>
+                </a>
+
+                <a href="alonsobolbaran.html" class="team-member">
+                    <div class="member-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Alonso Bolbarán</h3>
+                        <p>Formulador</p>
+                    </div>
+                    <i class="fas fa-chevron-right member-arrow"></i>
+                </a>
+            </div>
+        </div>
+
+       
+        
+    </div>
+   
+
+    <script>
+        // Add animation to team members when page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            const members = document.querySelectorAll('.team-member');
+            members.forEach((member, index) => {
+                member.style.animationDelay = `${index * 0.1}s`;
+                member.classList.add('fade-in');
+            });
+
+            // Add animation to header
+            const header = document.querySelector('.header');
+            header.style.animationDelay = '0s';
+            header.classList.add('fade-in');
+        });
+
+        // Add some interactive effects
+        const style = document.createElement('style');
+        style.textContent = `
+            .fade-in {
+                animation: fadeIn 0.5s ease forwards;
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>

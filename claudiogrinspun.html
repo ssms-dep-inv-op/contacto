@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claudio Grínspun González | Contacto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="img/img1.png" class="profile-img">
+            <h1>Claudio Grinspun González</h1>
+            <h2>Jefe de Departamento Inversiones y Operaciones</h2>
+            <div class="divider"></div>
+            <p><strong>Ingeniero Civil Industrial</strong></p>
+        </div>
+        
+        <div class="links">
+            <a href="tel:+56225763719" class="link-item">
+                <div class="link-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Teléfono</h3>
+                    <p>+56 (2) 2576 3719</p>
+                </div>
+                <i class="fas fa-chevron-right" style="color: #0033a0;"></i>
+            </a>
+            
+            <a href="mailto:claudio.grínspun@ssms.gob.cl" class="link-item">
+                <div class="link-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="link-text">
+                    <h3>E-mail</h3>
+                    <p>claudio.grínspun@ssms.gob.cl</p>
+                </div>
+                <i class="fas fa-chevron-right" style="color: #0033a0;"></i>
+            </a>
+            
+            <a href="https://www.google.com/maps/place/Av.+Santa+Rosa+3453,+San+Miguel,+Región+Metropolitana,+Chile" class="link-item" target="_blank">
+                <div class="link-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Ubicación</h3>
+                    <p>3453 Avenida Santa Rosa, San Miguel, Región Metropolitana, Chile</p>
+                </div>
+                <i class="fas fa-chevron-right" style="color: #0033a0;"></i>
+            </a>
+        </div>
+        
+    </div>
+
+    <script>
+        // Add animation to links when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.link-item');
+            links.forEach((link, index) => {
+                link.style.animationDelay = `${index * 0.1}s`;
+                link.classList.add('fade-in');
+            });
+            
+            // Add animation to profile
+            const profile = document.querySelector('.profile');
+            profile.style.animationDelay = '0s';
+            profile.classList.add('fade-in');
+        });
+
+        // Add some interactive effects
+        const style = document.createElement('style');
+        style.textContent = `
+            .fade-in {
+                animation: fadeIn 0.5s ease forwards;
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
