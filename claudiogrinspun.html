@@ -56,37 +56,49 @@
     </div>
 
     <script>
-        // Add animation to links when page loads
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const links = document.querySelectorAll('.link-item');
-            links.forEach((link, index) => {
-                link.style.animationDelay = `${index * 0.1}s`;
-                link.classList.add('fade-in');
-            });
-            
-            // Add animation to profile
             const profile = document.querySelector('.profile');
-            profile.style.animationDelay = '0s';
-            profile.classList.add('fade-in');
-        });
 
-        // Add some interactive effects
-        const style = document.createElement('style');
-        style.textContent = `
-            .fade-in {
-                animation: fadeIn 0.5s ease forwards;
-                opacity: 0;
-                transform: translateY(10px);
+            // Aplica estado inicial
+            links.forEach(link => link.classList.add('fade-init'));
+            profile.classList.add('fade-init');
+
+            // Crea <style> solo si no existe
+            if (!document.querySelector('#fade-style')) {
+                const style = document.createElement('style');
+                style.id = 'fade-style';
+                style.textContent = `
+        .fade-init {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        .fade-in {
+          animation: fadeIn 0.5s ease forwards;
+        }
+        @keyframes fadeIn {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `;
+                document.head.appendChild(style);
             }
-            
-            @keyframes fadeIn {
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        `;
-        document.head.appendChild(style);
+
+            // Activa animación con delay
+            setTimeout(() => {
+                profile.classList.add('fade-in');
+                profile.classList.remove('fade-init');
+
+                links.forEach((link, index) => {
+                    setTimeout(() => {
+                        link.classList.add('fade-in');
+                        link.classList.remove('fade-init');
+                    }, index * 100);
+                });
+            }, 50);
+        });
     </script>
 </body>
 </html>

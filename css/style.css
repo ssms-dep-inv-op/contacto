@@ -236,6 +236,22 @@ body {
     text-overflow: ellipsis; /* Muestra ... */
 }
 
+.fade-init {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .footer {
     text-align: center;
     margin-top: 20px;
