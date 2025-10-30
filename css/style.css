@@ -217,6 +217,8 @@ body {
 
 .link-text {
     flex: 1;
+    min-width: 0; /* Ya lo tienes, importante */
+    overflow: hidden; /* Oculta el texto que sobresale */
 }
 
 .link-text h3 {
@@ -266,3 +268,4 @@ body {
     }
 
 }
+
